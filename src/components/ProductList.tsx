@@ -1,8 +1,12 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import styled from "styled-components";
 
 import ProductCard from "./ProductCard";
 import { Product } from "../types/product";
+
+const MainContainer = styled.div`
+    margin: 200px 20px 140px 20px;
+`;
 
 const CategoryContainer = styled.div`
     display: flex;
@@ -71,17 +75,17 @@ const ProductList = () => {
 
 
     return (
-    <>
+    <MainContainer>
         {!withError && groupedData ?
             (
-                <div style={{margin: '20px 5% 20px 5%'}}>
+                <div>
                     <CategoryContainer>
                         <ProductCategory>For You</ProductCategory>
                         <SeeAllLink>See All</SeeAllLink>
                     </CategoryContainer>
                     <ProductContainer>
                         {groupedData.for_you.map((product: Product, idx: number) => (
-                            <ProductCard product={product} />
+                            <ProductCard product={product} key={idx} />
                         ))}
                     </ProductContainer>
                     <CategoryContainer>
@@ -90,7 +94,7 @@ const ProductList = () => {
                     </CategoryContainer>
                     <ProductContainer>
                         {groupedData.hot.map((product: Product, idx: number) => (
-                            <ProductCard product={product} />
+                            <ProductCard product={product} key={idx} />
                         ))}
                     </ProductContainer>
                     <CategoryContainer>
@@ -99,22 +103,22 @@ const ProductList = () => {
                     </CategoryContainer>
                     <ProductContainer>
                         {groupedData?.features.map((product: Product, idx: number) => (
-                            <ProductCard product={product} />
+                            <ProductCard product={product} key={idx} />
                         ))}
                     </ProductContainer>
                     <ProductContainer>
                         {groupedData.null.map((product: Product, idx: number) => (
-                            <ProductCard product={product} />
+                            <ProductCard product={product} key={idx} />
                         ))}
                     </ProductContainer>
                 </div>
             ) :
             (
-                <h1>With Error</h1>
+                <h1>There are no products available.</h1>
                 
             )
-            }
-    </>
+        }
+    </MainContainer>
 )}
 
 export default ProductList;

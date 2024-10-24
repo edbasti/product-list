@@ -9,7 +9,10 @@ const ContainerDiv = styled.div`
     justify-content: center;
     background-color: #7130D5;
     height: 94px;
+    width: 100%;
     padding: 20px;
+    position: fixed;
+    top: 0;
 `
 
 const Content = styled.div`

@@ -1,4 +1,5 @@
 import React, { ReactElement, useState } from "react"
+import styled from "styled-components";
 
 import TabTitle from "./TabTitle"
 import homeIcon from "../images/home.png";
@@ -9,6 +10,21 @@ type Props = {
   children: ReactElement[]
 }
 
+const TabsContainer = styled.div`
+  height: 94px;
+  border-top: .5px solid #CACACA;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.04);
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden;
+  background-color: #FFF;
+`
+
 const Tabs: React.FC<Props> = ({ children }) => {
     const [selectedTab, setSelectedTab] = useState(0)
     const arrIcons = [homeIcon, couponIcon, meIcon];
@@ -16,7 +32,7 @@ const Tabs: React.FC<Props> = ({ children }) => {
   return (
     <div>
       {children[selectedTab]}
-      <div style={{padding: 15, marginTop: 10, borderTop: '1px solid #CACACA', display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
+      <TabsContainer>
         {children.map((item, index) => (
           <TabTitle
           key={index}
@@ -26,7 +42,7 @@ const Tabs: React.FC<Props> = ({ children }) => {
           setSelectedTab={setSelectedTab}
         />
         ))}
-      </div>
+      </TabsContainer>
 
     </div>
   )

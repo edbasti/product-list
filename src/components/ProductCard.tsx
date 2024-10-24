@@ -38,7 +38,7 @@ const TextContainer = styled.div`
 `;
 
 const ProductImage = styled.img`
-  width: 183px;
+  width: 100%;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 `;
