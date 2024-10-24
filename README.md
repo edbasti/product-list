@@ -1,15 +1,6 @@
 # Product List App
 
-This is a product list page created using React
-
-## Feature
-
-- You can search product with Title.
-- You can filter search results by Gender and/or Sale.
-- If searched/filtered results exceed 100, you can paginate nicely😉
-- By clicking a product, you can check additional images(if it has) with carousel.
-- Every image is loaded asynchronously.
-- You can check any images even if you went off-line until page reload.
+This is a product list page created using React, Typescript, Styled Components.
 
 ## Install Yarn
 
@@ -44,8 +35,8 @@ You will also see any lint errors in the console.
 }
 
 ### `run the following`
-export NODE_OPTIONS=--openssl-legacy-provider
-yarn start
+### export NODE_OPTIONS=--openssl-legacy-provider
+### yarn start
 
 ### `yarn test`
 
